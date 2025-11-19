@@ -1,0 +1,35 @@
+.errorbox-wrap {
+  max-width: 1240px;
+  margin: 2rem auto;
+  padding: 0 1.75rem;
+}
+.errorbox-card {
+  padding: 1.25rem 1.5rem;
+  border-radius: 14px;
+  background: rgba(248, 113, 113, 0.1);
+  border: 1px solid rgba(248, 113, 113, 0.4);
+  color: #fecaca;
+}
+.errorbox-title {
+  font-weight: 800;
+  font-size: 1.05rem;
+  margin-bottom: 0.35rem;
+  color: #fecaca;
+}
+.errorbox-message {
+  font-size: 0.95rem;
+  color: #ffe4e6;
+}
+.errorbox-retry {
+  margin-top: 0.9rem;
+  padding: 0.6rem 1rem;
+  border-radius: 10px;
+  border: 1px solid rgba(248, 113, 113, 0.6);
+  background: transparent;
+  color: #fecaca;
+  font-weight: 700;
+  cursor: pointer;
+}
+.errorbox-retry:hover {
+  background: rgba(248, 113, 113, 0.15);
+}

@@ -1,0 +1,110 @@
+.connection-card {
+  border-radius: var(--radius-xl);
+  padding: 0.9rem 0.9rem 0.85rem;
+  background: linear-gradient(
+      150deg,
+      rgba(15, 23, 42, 0.96),
+      rgba(15, 23, 42, 0.8)
+    );
+  border: 1px solid var(--color-border);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 1rem;
+  box-shadow: 0 18px 40px -20px rgba(15, 23, 42, 0.9);
+}
+
+.connection-card-main {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+.connection-card-name-row {
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.connection-card-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  font-weight: 800;
+  background: linear-gradient(
+    135deg,
+    var(--color-primary-700),
+    var(--color-primary-500)
+  );
+  color: #fff;
+  box-shadow: 0 12px 32px -16px rgba(124, 58, 237, 0.8);
+}
+
+.connection-card-name {
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.connection-card-title {
+  margin: 0.05rem 0 0;
+  font-size: 0.86rem;
+  color: var(--color-muted);
+}
+
+.connection-card-meta {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.25rem;
+  font-size: 0.8rem;
+}
+
+.connection-card-reachout-tag {
+  align-self: flex-start;
+  border-radius: 999px;
+  padding: 0.22rem 0.7rem;
+  font-size: 0.78rem;
+  text-transform: uppercase;
+  letter-spacing: 0.13em;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  color: var(--color-muted);
+}
+
+.connection-card-reachout-now {
+  border-color: rgba(244, 63, 94, 0.8);
+  color: #fecaca;
+  background: radial-gradient(
+    circle at 0 0,
+    rgba(239, 68, 68, 0.35),
+    transparent 55%
+  );
+}
+
+.connection-card-submeta {
+  color: var(--color-muted);
+}
+
+.connection-card-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+}
+
+.connection-card-btn {
+  font-size: 0.82rem;
+  padding: 0.6rem 0.95rem;
+  flex: 1;
+  justify-content: center;
+}
+
+.connection-card-delete {
+  border-color: rgba(239, 68, 68, 0.5);
+  color: #fecaca;
+}
+
+.connection-card-delete:hover {
+  background: rgba(239, 68, 68, 0.18);
+}

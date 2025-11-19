@@ -1,0 +1,110 @@
+/* Global Tailwind layers */
+@import "tailwindcss";
+
+@layer 
+base
+ {
+  *, *::before, *::after {
+    
+box-sizing
+: border-box;
+  }
+
+  * {
+    
+margin
+: 0;
+    
+padding
+: 0;
+    
+box-sizing
+: border-box;
+  }
+
+  html {
+    
+font-family
+: sans-serif;
+    /* color: #333; */
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* Theme tokens (easy to override per theme) */
+@theme {
+  /* Brand (violet) */
+  --color-primary-50: #f5f3ff;
+  --color-primary-100: #ede9fe;
+  --color-primary-200: #ddd6fe;
+  --color-primary-300: #c4b5fd;
+  --color-primary-400: #a78bfa;
+  --color-primary-500: #8b5cf6;
+  --color-primary-600: #7c3aed; /* main */
+  --color-primary-700: #6d28d9;
+  --color-primary-800: #5b21b6;
+  --color-primary-900: #4c1d95;
+
+  /* Dark surface scale */
+  --color-surface-50: #f1f5f9;
+  --color-surface-100: #cbd5e1;
+  --color-surface-200: #94a3b8;
+  --color-surface-300: #64748b;
+  --color-surface-400: #475569;
+  --color-surface-500: #334155;
+  --color-surface-600: #1f2937;
+  --color-surface-700: #111827;
+  --color-surface-800: #0f172a;
+  --color-surface-900: #0b1120;
+
+  /* Neutrals */
+  --color-foreground: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: #23324a;
+
+  /* Radius */
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+}
+
+/* Optional alternate theme (example)
+[data-theme='light'] {
+  --color-surface-800: #ffffff;
+  --color-surface-900: #f8fafc;
+  --color-foreground: #0f172a;
+  --color-border: #e2e8f0;
+  --color-muted: #64748b;
+}
+*/
+
+html, body {
+  margin: 0;
+  min-height: 100vh;
+  background: #fcf2f2; 
+  overflow-x: hidden;
+  overscroll-behavior: none; 
+}
+
+body {
+  background:
+    radial-gradient(circle at 30% 20%, rgba(124,58,237,0.35), transparent 60%),
+    radial-gradient(circle at 75% 60%, rgba(76,29,149,0.35), transparent 65%),
+    linear-gradient(160deg, var(--color-surface-800), var(--color-surface-900));
+  color: var(--color-foreground);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen;
+  -webkit-font-smoothing: antialiased;
+}
+
+
+/* Responsive */
+@media (max-width: 560px) {
+  .auth-modal {
+    width: calc(100% - 2rem);
+    padding: 1.75rem 1.3rem 1.5rem;
+  }
+}

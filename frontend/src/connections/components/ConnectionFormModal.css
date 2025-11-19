@@ -1,0 +1,79 @@
+.connection-form-modal {
+  width: min(100%, 560px);
+  background: linear-gradient(
+    155deg,
+    rgba(31, 41, 55, 0.96),
+    rgba(15, 23, 42, 0.98)
+  );
+  border-radius: 28px;
+  padding: 2.1rem 2rem 1.8rem;
+  border: 1px solid var(--color-border);
+  color: var(--color-foreground);
+  box-shadow: 0 30px 80px -24px rgba(0, 0, 0, 0.85);
+  position: relative;
+}
+
+.connection-form-modal h2 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 900;
+}
+
+.connection-form-subtitle {
+  margin: 0.35rem 0 1.5rem;
+  font-size: 0.95rem;
+  color: var(--color-muted);
+}
+
+.connection-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.connection-form-field label {
+  display: block;
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-weight: 800;
+  color: var(--color-muted);
+  margin-bottom: 0.25rem;
+}
+
+.connection-form-field .helper {
+  display: block;
+  margin-top: 0.25rem;
+  font-size: 0.78rem;
+  color: var(--color-muted);
+}
+
+.connection-form-field input,
+.connection-form-field textarea,
+.connection-form-field select {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--color-border);
+  padding: 0.85rem 0.95rem;
+  background: rgba(15, 23, 42, 0.96);
+  color: var(--color-foreground);
+  font-size: 0.96rem;
+  outline: none;
+  resize: vertical;
+  transition: border-color 0.15s, background 0.15s, box-shadow 0.15s;
+}
+
+.connection-form-field input:focus,
+.connection-form-field textarea:focus,
+.connection-form-field select:focus {
+  border-color: var(--color-primary-500);
+  background: rgba(15, 23, 42, 1);
+  box-shadow: 0 0 0 1px rgba(139, 92, 246, 0.5);
+}
+
+.connection-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.7rem;
+  margin-top: 0.75rem;
+}
