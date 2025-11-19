@@ -9,6 +9,7 @@ import { ensureCsrf, setAccessToken } from "./services/api.js";
 import NavBar from "./components/NavBar.jsx";
 import Connections from "./connections/ConnectionPage.jsx";
 import ConnectionsMap from "./connections_map/ConnectionsMapPage.jsx";
+import NotFoundPage from "./pages/NotFoundPage.jsx";
 
 function App() {
   const [authOpen, setAuthOpen] = useState(false);
@@ -59,6 +60,7 @@ function App() {
         <Route path="/connections" element={<Connections />} />
         <Route path="/connections/map" element={<ConnectionsMap />} />
         <Route path="/profile" element={<ProfilePage />} />
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       <AuthModal
         open={authOpen}
