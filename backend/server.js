@@ -18,19 +18,24 @@ dotenv.config();
 const app = express();
 const PORT = process.env.PORT || 3000;
 
+// CORS – now using your updated FRONTEND_URL on Render
 app.use(
   cors({
-    origin: process.env.FRONTEND_URL,
+    origin: process.env.FRONTEND_URL || true,
     credentials: true,
   })
 );
+
 app.use(cookieParser());
 app.use(passport.initialize());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "..", "frontend", "public")));
+
+// --- STATIC FRONTEND (Vite build) ---
+const frontendPath = path.join(__dirname, "..", "frontend", "dist");
+app.use(express.static(frontendPath));
+// ------------------------------------
 
 // CSRF protection using cookie-based tokens
-// The csurf middleware will set a cookie secret and expect the token in the header 'x-csrf-token'
 app.use(
   csurf({
     cookie: {
@@ -43,13 +48,19 @@ app.use(
 
 // Expose a lightweight endpoint for clients to fetch the CSRF token
 app.get("/api/auth/csrf-token", (req, res) => {
-  // Send token in body; clients should echo it back in 'x-csrf-token'
   res.status(200).json({ csrfToken: req.csrfToken() });
 });
 
+// API routes
 app.use("/api/users", UsersRouter);
 app.use("/api/auth", AuthenticationRouter);
 app.use("/api/connections", ConnectionsRouter);
+
+// SPA catch-all: send index.html for non-API routes
+app.get("*", (req, res, next) => {
+  if (req.path.startsWith("/api")) return next();
+  return res.sendFile(path.join(frontendPath, "index.html"));
+});
 
 // Generic error handler for CSRF token errors
 // eslint-disable-next-line no-unused-vars
